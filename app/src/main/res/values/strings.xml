@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TuPet</string>
+    <string name="login">Login</string>
+    <string name="crea_una_cuenta">Crea una cuenta</string>
+    <string name="tupet">TuPet</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
