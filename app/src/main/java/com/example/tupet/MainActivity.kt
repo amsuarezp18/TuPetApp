@@ -29,15 +29,23 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.findPet -> setCurrentFragment(secondFragment)
-                R.id.locationMap -> setCurrentFragment(thirdFragment)
-                R.id.medical -> setCurrentFragment(fourthFragment)
-                R.id.account -> setCurrentFragment(firstFragment)
-                R.id.recommendPet -> setCurrentFragment(fifthFragment)
+                R.id.findPet -> {setCurrentFragment(secondFragment); this.mapOpened = false}
+                R.id.locationMap -> {setCurrentFragment(thirdFragment); this.mapOpened = true}
+                R.id.medical -> {setCurrentFragment(fourthFragment); this.mapOpened = false}
+                R.id.account -> {setCurrentFragment(firstFragment); this.mapOpened = false}
+                R.id.recommendPet -> {setCurrentFragment(fifthFragment); this.mapOpened = false}
             }
             true
         }
 
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if(this.mapOpened){
+            setCurrentFragment(LocationFragment())
+            this.mapOpened = false
+        }
     }
 
     private fun setCurrentFragment(fragment: Fragment){
