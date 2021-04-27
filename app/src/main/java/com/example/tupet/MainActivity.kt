@@ -6,10 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.tupet.databinding.ActivityMainBinding
-import com.example.tupet.fragments.AccountFragment
-import com.example.tupet.fragments.FindFragment
-import com.example.tupet.fragments.LocationFragment
-import com.example.tupet.fragments.MedicalFragment
+import com.example.tupet.fragments.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         val secondFragment = FindFragment()
         val thirdFragment =  LocationFragment()
         val fourthFragment = MedicalFragment()
+        val fifthFragment = RecommendFragment()
 
         setCurrentFragment(firstFragment)
 
@@ -35,10 +33,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.locationMap -> setCurrentFragment(thirdFragment)
                 R.id.medical -> setCurrentFragment(fourthFragment)
                 R.id.account -> setCurrentFragment(firstFragment)
+                R.id.recommendPet -> setCurrentFragment(fifthFragment)
             }
             true
         }
-        
+
     }
 
     private fun setCurrentFragment(fragment: Fragment){
