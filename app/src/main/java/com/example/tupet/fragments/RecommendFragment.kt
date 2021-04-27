@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.TextView
+import com.example.tupet.CustomDialog
+import com.example.tupet.CustomDialogDos
+import com.example.tupet.CustomDialogTres
 import com.example.tupet.R
 import com.example.tupet.databinding.FragmentRecommendBinding
+import com.example.tupet.databinding.PopupRecommendBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +30,7 @@ class RecommendFragment : Fragment() {
     private var _binding: FragmentRecommendBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -35,6 +42,7 @@ class RecommendFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentRecommendBinding.inflate(inflater, container, false)
         val view = binding.root
+
 
         val btnrecommend = binding.recomendacionbtn
 
@@ -53,20 +61,27 @@ class RecommendFragment : Fragment() {
         val checkThirteen = binding.checkboxFiveTwo
         val checkFourteen = binding.checkboxFiveTree
 
+        var view2 = LayoutInflater.from(container?.context).inflate(R.layout.popup_recommend, container, false);
+
+        var tipoMascota = view2.findViewById(R.id.fieldTypeOf) as TextView
+        var tamanoMascota = view2.findViewById(R.id.fieldTamanoOf) as TextView
+        var razasMascotas = view2.findViewById(R.id.fieldRazaOff) as TextView
+
+
         btnrecommend.setOnClickListener{
 
             if( checkTwo.isChecked && checkFive.isChecked && checkFour.isChecked && checkTen.isChecked && checkTwelve.isChecked  ){
-                Log.d("TUJA", "Me merezco a un sammy")
+                getActivity()?.supportFragmentManager?.let { it1 -> CustomDialog().show(it1, "MyCustomFragmentUno") }
             }
             else if( ( checkNine.isChecked || checkEleven.isChecked ) && ( checkEight.isChecked|| checkSeven.isChecked ) &&
                     checkTree.isChecked && checkOne.isChecked && ( checkFourteen.isChecked|| checkThirteen.isChecked)){
-                Log.d("TUJA", "Me merezco a un border collie")
+                getActivity()?.supportFragmentManager?.let { it1 -> CustomDialogDos().show(it1, "MyCustomFragmentDos") }
             }
             else if( checkOne.isChecked &&  checkFour.isChecked && checkThirteen.isChecked && checkSix.isChecked && ( checkTen.isChecked || checkNine.isChecked ) ){
-                Log.d("TUJA", "Me merezco a una frida")
+                getActivity()?.supportFragmentManager?.let { it1 -> CustomDialogTres().show(it1, "MyCustomFragmentTres") }
             }
             else {
-                Log.d("TUJA", "Me merezco a una frida else")
+                getActivity()?.supportFragmentManager?.let { it1 -> CustomDialogDos().show(it1, "MyCustomFragmentCuatro") }
             }
 
 
