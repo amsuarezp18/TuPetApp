@@ -13,8 +13,19 @@ class LauncherActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityLauncherBinding
 
+    var auth = FirebaseAuth.getInstance()
 
-    lateinit var auth: FirebaseAuth
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+
+        if(currentUser!=null){
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +37,8 @@ class LauncherActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+
 
         binding.newaccountbtn.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
