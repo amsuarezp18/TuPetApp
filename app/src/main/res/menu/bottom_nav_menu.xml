@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+   <item
+       android:id="@+id/findPet"
+       android:title="Find"
+       android:icon="@drawable/ic_baseline_campaign_24" />
+
+    <item
+        android:id="@+id/locationMap"
+        android:title="map"
+        android:icon="@drawable/ic_baseline_place_24" />
+
+    <item
+        android:id="@+id/medical"
+        android:title="Medical"
+        android:icon="@drawable/ic_baseline_calendar_today_24" />
+
+
+    <item
+        android:id="@+id/account"
+        android:title="Account"
+        android:icon="@drawable/ic_baseline_home_24" />
+
+</menu>
