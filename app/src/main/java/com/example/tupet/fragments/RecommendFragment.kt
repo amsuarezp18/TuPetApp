@@ -1,6 +1,7 @@
 package com.example.tupet.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -54,17 +55,18 @@ class RecommendFragment : Fragment() {
 
         btnrecommend.setOnClickListener{
 
-            if( checkTwo.isChecked  ){
-
+            if( checkTwo.isChecked && checkFive.isChecked && checkFour.isChecked && checkTen.isChecked && checkTwelve.isChecked  ){
+                Log.d("TUJA", "Me merezco a un sammy")
             }
-            else if(3==3){
-
+            else if( ( checkNine.isChecked || checkEleven.isChecked ) && ( checkEight.isChecked|| checkSeven.isChecked ) &&
+                    checkTree.isChecked && checkOne.isChecked && ( checkFourteen.isChecked|| checkThirteen.isChecked)){
+                Log.d("TUJA", "Me merezco a un border collie")
             }
-            else if(4 == 4){
-
+            else if( checkOne.isChecked &&  checkFour.isChecked && checkThirteen.isChecked && checkSix.isChecked && ( checkTen.isChecked || checkNine.isChecked ) ){
+                Log.d("TUJA", "Me merezco a una frida")
             }
             else {
-
+                Log.d("TUJA", "Me merezco a una frida else")
             }
 
 
