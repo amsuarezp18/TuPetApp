@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
+import com.example.tupet.MapaSocialActivity
 import com.example.tupet.R
 import com.example.tupet.databinding.FragmentLocationBinding
 
@@ -38,8 +39,8 @@ class LocationFragment : Fragment() {
 
         btnMap.setOnClickListener{
             mapOpened = true
-            //val intent = Intent(this.activity, MapsActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this.activity, MapaSocialActivity::class.java)
+            startActivity(intent)
         }
 
         return view
