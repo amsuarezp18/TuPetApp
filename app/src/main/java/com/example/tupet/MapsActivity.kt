@@ -115,7 +115,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun drawMarker(latlong : LatLng) {
-        val markerOption = MarkerOptions().position(latlong).title("I am here")
+        val markerOption = MarkerOptions().position(latlong).title("Mi ubicación")
             .snippet(getTheAddress(latlong.latitude, latlong.longitude)).draggable(true)
 
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latlong))
