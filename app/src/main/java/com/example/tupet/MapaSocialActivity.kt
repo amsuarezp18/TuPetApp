@@ -118,8 +118,8 @@ class MapaSocialActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         })
 
-        //val sydney = LatLng(-4567.89,45.789)
-        //mMap.addMarker(MarkerOptions().position(sydney).title("Veterinaria").icon(bitmapFromVector(this, 3)))
+        val sydney = LatLng(-4567.89,45.789)
+        mMap.addMarker(MarkerOptions().position(sydney).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
 
     }
 
