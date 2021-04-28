@@ -116,10 +116,22 @@ class MapaSocialActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         })
 
-        //val sydney = LatLng(-4567.89,45.789)
-        //mMap.addMarker(MarkerOptions().position(sydney).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
+        val vetOne = LatLng(5.622213677554483,-73.80801346153021)
+        val vetTwo = LatLng(5.621258065140666,-73.81325382739305)
+        val vetTree = LatLng(5.620357505777206,-73.81973069161177)
+        val vetFour = LatLng(5.612646471785936,-73.82065907120705)
+        val petOne = LatLng(5.616665164459282,-73.8129835948348)
+        val petTwo = LatLng(5.612373530677636,-73.81660122424364)
+
+        mMap.addMarker(MarkerOptions().position(vetOne).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
+        mMap.addMarker(MarkerOptions().position(vetTwo).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
+        mMap.addMarker(MarkerOptions().position(vetTree).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
+        mMap.addMarker(MarkerOptions().position(vetFour).title("Veterinaria").icon(bitmapFromVector(this, R.drawable.ic_vet_map)))
+        mMap.addMarker(MarkerOptions().position(petOne).icon(bitmapFromVector(this, R.drawable.ic_doggie_map)))
+        mMap.addMarker(MarkerOptions().position(petTwo).icon(bitmapFromVector(this, R.drawable.ic_doggie_map)))
 
     }
+
 
     private fun bitmapFromVector(context: Context, vectorResId: Int): BitmapDescriptor? {
 
@@ -146,6 +158,11 @@ class MapaSocialActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun getTheAddress(latitude: Double, longitude: Double): String? {
         val geocoder = Geocoder(this, Locale.getDefault())
         val addresses = geocoder.getFromLocation(latitude, longitude, 1)
+
+        Log.d("TUJA", "LA LONGITUD ES " + longitude)
+
+        Log.d("TUJA", "LA LATITUD ES " + latitude)
+
         if(addresses.size > 0 )
             return addresses[0].getAddressLine(0)
         return ""
