@@ -34,8 +34,8 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:name=".MapaSocialActivity"
+            android:label="@string/title_activity_mapa_social"></activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"

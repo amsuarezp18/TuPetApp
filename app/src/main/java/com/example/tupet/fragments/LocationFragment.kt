@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
-import com.example.tupet.MapsActivity
 import com.example.tupet.R
 import com.example.tupet.databinding.FragmentLocationBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 /**
  * A simple [Fragment] subclass.
@@ -40,8 +38,8 @@ class LocationFragment : Fragment() {
 
         btnMap.setOnClickListener{
             mapOpened = true
-            val intent = Intent(this.activity, MapsActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this.activity, MapsActivity::class.java)
+            //startActivity(intent)
         }
 
         return view
